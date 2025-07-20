@@ -8,7 +8,7 @@ const options = {
       version: "1.0.0",
       description: "API documentation for BookNest",
     },
-    servers: [{ url: "http://localhost:5000/api" }],
+    servers: [{ url: "https://booknest-api.vtsj.onrender.com/api" }],
     components: {
       schemas: {
         Book: {
