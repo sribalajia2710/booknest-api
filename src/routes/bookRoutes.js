@@ -97,6 +97,8 @@ router.put('/books/:id', verifyToken, updateBook);
  *     responses:
  *       200:
  *         description: Book deleted successfully
+ *       401:
+ *         description: Not authorized to delete
  *       404:
  *         description: Book not found
  */

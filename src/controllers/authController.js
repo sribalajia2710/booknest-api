@@ -6,13 +6,13 @@ exports.signup = async (req, res) => {
   const { error } = signupSchema.validate(req.body);
   if (error) return res.status(400).json({ message: error.details[0].message });
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password,role } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser)
       return res.status(400).json({ message: "Email already in use" });
 
-    const user = new User({ name, email, password });
+    const user = new User({ name, email, password, role });
     await user.save();
 
     const isMatch = await user.comparePassword(password);
@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
       return res.status(400).json({ message: "Incorrect password" });
 
     const token = jwt.sign(
-      { userId: user._id, email: user.email },
+      { userId: user._id, email: user.email, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
