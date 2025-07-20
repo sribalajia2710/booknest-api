@@ -10,12 +10,12 @@ exports.createBook = async (req, res) => {
   }
 
   try {
-    if (!req.user || !req.user_id) {
+    if (!req.user || !req.user._id) {
       logger.error("Book creation failed: req.user is missing");
       return res.status(500).json({ message: "Internal server error: missing user info" });
     }
 
-    const userId = req.user_id;
+    const userId = req.user._id;
     const newBook = new Book({ ...req.body, addedBy: userId });
 
     logger.debug(`Creating book with data: ${JSON.stringify(newBook.toObject())}`);
