@@ -45,6 +45,12 @@ npm install
 npm run dev
 ```
 
+### Test Locally
+
+```bash
+npm run test
+```
+
 Create a `.env` file and set your variables:
 
 ```env
