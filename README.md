@@ -66,9 +66,8 @@ JWT_SECRET=your_jwt_secret
 
 * `GET /api/books` – Get all books (auth required)
 * `POST /api/books` – Add a new book (auth required)
-* `GET /api/book/:id` – Get a single book by ID (auth required)
-* `PUT /api/book/:id` – Update a book (auth required)
-* `DELETE /api/book/:id` – Delete a book (auth required & only admin can delete)
+* `PUT /api/books/:id` – Update a book (auth required)
+* `DELETE /api/books/:id` – Delete a book (auth required & only admin can delete)
 
 ---
 
