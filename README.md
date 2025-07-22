@@ -1,17 +1,25 @@
 # BookNest
 
-BookNest is a RESTful API built with Node.js, Express, and MongoDB for managing a book store system. It includes authentication, CRUD operations for books, and Swagger documentation.
+BookNest is a RESTful API built with Node.js, Express, and MongoDB for managing a book store system. It supports user authentication, book management (CRUD), and has Swagger API documentation.
+
+---
+
+## API URL
+
+**API deployed in Render URL:**
+[https://booknest-api-vtsj.onrender.com](https://booknest-api-vtsj.onrender.com)
 
 ---
 
 ## Tech Stack
 
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT (Authentication)
-- Joi (Validation)
-- Swagger (API Docs)
+* **Node.js** – Backend runtime
+* **Express.js** – Web framework
+* **MongoDB + Mongoose** – Database and ORM
+* **JWT** – JSON Web Token for authentication
+* **Joi** – Schema validation
+* **Swagger** – Interactive API docs
+* **Testing** – Jest
 
 ---
 
@@ -19,8 +27,9 @@ BookNest is a RESTful API built with Node.js, Express, and MongoDB for managing 
 
 ### Prerequisites
 
-- Node.js and npm
-- MongoDB
+* Node.js 
+* npm
+* MongoDB
 
 ### Installation
 
@@ -28,3 +37,43 @@ BookNest is a RESTful API built with Node.js, Express, and MongoDB for managing 
 git clone https://github.com/sribalajia2710/booknest-api.git
 cd booknest-api
 npm install
+```
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+Create a `.env` file and set your variables:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+```
+
+---
+
+## API Endpoints
+
+### Auth
+
+* `POST /api/auth/signup` – Register a new user
+* `POST /api/auth/login` – Login and receive a JWT token
+
+### Books
+
+* `GET /api/books` – Get all books (auth required)
+* `POST /api/books` – Add a new book (auth required)
+* `GET /api/book/:id` – Get a single book by ID (auth required)
+* `PUT /api/book/:id` – Update a book (auth required)
+* `DELETE /api/book/:id` – Delete a book (auth required & only admin can delete)
+
+---
+
+## API Docs
+
+Visit:
+**[https://booknest-api-vtsj.onrender.com/api-docs](https://booknest-api-vtsj.onrender.com/api-docs)**
+
